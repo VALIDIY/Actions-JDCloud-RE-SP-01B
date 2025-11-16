@@ -11,7 +11,7 @@
 #
 
 # 固件版本号添加个人标识和日期
-sed -i "s/DISTRIB_DESCRIPTION='.*ImmortalWrt '/DISTRIB_DESCRIPTION='FICHEN($(TZ=UTC-8 date +%Y.%m.%d))@ImmortalWrt '/g" package/lean/default-settings/files/zzz-default-settings
+sed -i "s/DISTRIB_DESCRIPTION='.*ImmortalWrt '/DISTRIB_DESCRIPTION='FICHEN($(TZ=UTC-8 date +%Y.%m.%d))@VALIDIY ImmortalWrt '/g" package/emortal/default-settings/files/99-default-settings
 
 # Modify default IP
 sed -i 's/192.168.1.1/192.168.6.1/g' package/base-files/files/bin/config_generate
