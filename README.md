@@ -1,6 +1,5 @@
-# Github Actions padavanonly/immortalwrt-18.06-k5.10 
+# Github Actions ImmortalWrt
 
-- ImmortalWrt源码是[immortalwrt](https://github.com/immortalwrt/immortalwrt)，openwrt-24.10。
 - Github Actions来自于[P3TERX/Actions-OpenWrt](https://github.com/P3TERX/Actions-OpenWrt)，[中文教程](https://p3terx.com/archives/build-openwrt-with-github-actions.html)。
 - 编译目标为JDCloud_RE-SP-01B。
 
@@ -65,3 +64,4 @@ make defconfig
 ## License
 
 [MIT](https://github.com/P3TERX/Actions-OpenWrt/blob/main/LICENSE) © P3TERX
+
