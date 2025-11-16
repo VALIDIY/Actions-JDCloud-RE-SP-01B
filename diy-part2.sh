@@ -1,33 +1,20 @@
 #!/bin/bash
 #
-# Copyright (c) 2019-2020 P3TERX <https://p3terx.com>
-#
-# This is free software, licensed under the MIT License.
-# See /LICENSE for more information.
-#
 # https://github.com/P3TERX/Actions-OpenWrt
 # File name: diy-part2.sh
 # Description: OpenWrt DIY script part 2 (After Update feeds)
 #
+# Copyright (c) 2019-2024 P3TERX <https://p3terx.com>
+#
+# This is free software, licensed under the MIT License.
+# See /LICENSE for more information.
+#
 
-# golang 1.24.x
-rm -rfv feeds/packages/lang/golang
-git clone https://github.com/sbwml/packages_lang_golang -b 24.x feeds/packages/lang/golang
+# Modify default IP
+sed -i 's/192.168.1.1/192.168.6.1/g' package/base-files/files/bin/config_generate
 
-# Replace luci-theme-argon
-rm -rf feeds/luci/themes/luci-theme-argon
-git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git feeds/luci/themes/luci-theme-argon
+# Modify default theme
+sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/themes/luci-theme-argon
 
-# Replace luci-app-ssr-plus & Depends
-Replace_package="xray-core xray-plugin v2ray-core v2ray-plugin shadowsocks-libev trojan hysteria ipt2socks microsocks redsocks2 chinadns-ng dns2socks dns2tcp dnsproxy mosdns naiveproxy simple-obfs tcping luci-app-ssr-plus"
-./scripts/feeds uninstall ${Replace_package}
-./scripts/feeds install -f -p helloworld ${Replace_package}
-
-# Replace shadowsocks-rust
-rm -rfv feeds/packages/net/shadowsocks-rust
-rm -rfv feeds/helloworld/shadowsocks-rust
-git clone https://github.com/sbwml/openwrt_helloworld openwrt_helloworld
-cp -rv openwrt_helloworld/shadowsocks-rust feeds/packages/net/shadowsocks-rust
-rm -rf openwrt_helloworld
-
-sed -i 's/192.168.1.1/192.168.5.1/g' package/base-files/files/bin/config_generate
+# Modify hostname
+sed -i 's/ImmortalWrt/JDCloud_5G_CPE/g' package/base-files/files/bin/config_generate
