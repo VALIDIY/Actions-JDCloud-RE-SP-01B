@@ -104,8 +104,8 @@ jobs:
     - name: 自定义插件主题。
       run: |
         cd package
-        mkdir openwrt-packages
-        cd openwrt-packages
+        mkdir ImmortalWrt-packages
+        cd ImmortalWrt-packages
         git clone https://github.com/VALIDIY/luci-app-5GSmartCase.git
 
     - name: Checkout
