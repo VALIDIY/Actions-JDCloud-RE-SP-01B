@@ -17,7 +17,7 @@ sed -i "s/DISTRIB_DESCRIPTION='.*ImmortalWrt '/DISTRIB_DESCRIPTION='FICHEN($(TZ=
 sed -i 's/192.168.1.1/192.168.6.1/g' package/base-files/files/bin/config_generate
 
 # Modify default theme
-sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/themes/luci-theme-argon
+git clone https://github.com/jerrykuku/luci-theme-argon.git feeds/luci/themes/luci-theme-argon
 
 # Modify hostname
 sed -i 's/ImmortalWrt/JDCloud_5G_CPE/g' package/base-files/files/bin/config_generate
